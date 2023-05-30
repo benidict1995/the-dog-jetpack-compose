@@ -1,4 +1,4 @@
 package com.benidict.network
 
-interface Service {
+interface ServiceApi {
 }
