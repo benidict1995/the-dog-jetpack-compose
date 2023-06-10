@@ -57,9 +57,9 @@ object ServiceModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(baseUrl: String, gson: Gson, client: OkHttpClient): ServiceApi =
+    fun provideRetrofit(gson: Gson, client: OkHttpClient): ServiceApi =
         Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl("https://api.thedogapi.com/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
