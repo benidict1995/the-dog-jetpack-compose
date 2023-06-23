@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">the-dog-jetpack-compose</string>
+    <string name="home">Home</string>
+    <string name="temperament">Temperament</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="breed">Breed</string>
+    <string name="life_span">Life Span</string>
+    <string name="breed_description">%1$s • (for %2$s)</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.benidict.domain.model
 
+import android.net.Uri
 import android.os.Parcelable
+import com.google.gson.Gson
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -17,6 +19,8 @@ data class Breed(
     val origin: String = "",
     val referenceImageId: String = ""
 ) : Parcelable {
+    override fun toString(): String = Uri.encode(Gson().toJson(this))
+
     companion object {
         fun empty(): Breed {
             return Breed(

@@ -11,27 +11,4 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
-    private val repositoryImpl: RepositoryImpl
-) : ViewModel() {
-
-    private val _state: MutableSharedFlow<ResponseState> = MutableSharedFlow()
-    val state = _state.asSharedFlow()
-
-    init {
-        loadBreed()
-    }
-
-    private fun loadBreed(){
-        viewModelScope.launch {
-            try{
-                _state.emit(ResponseState.Loading)
-                val response = repositoryImpl.loadBreed()
-                _state.emit(ResponseState.Success(response))
-
-            }catch (e: Exception){
-                _state.emit(ResponseState.Failure(e))
-            }
-        }
-    }
-}
+class MainViewModel @Inject constructor() : ViewModel() {}

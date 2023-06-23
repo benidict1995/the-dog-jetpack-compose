@@ -17,6 +17,24 @@ data class BreedDTO(
     @SerializedName("reference_image_id") val referenceImageId: String = ""
 ) {
     companion object {
+        fun toDomain(breedDTO: BreedDTO): Breed {
+            return with(breedDTO) {
+                Breed(
+                    id = id,
+                    name = name,
+                    weight = MeasurementDTO.toDomain(weight ?: MeasurementDTO()),
+                    height = MeasurementDTO.toDomain(height ?: MeasurementDTO()),
+                    image = ImageDTO.toDomain(image ?: ImageDTO()),
+                    bredFor = bredFor,
+                    breedGroup = breedGroup,
+                    lifeSpan = lifeSpan,
+                    temperament = temperament,
+                    origin = origin,
+                    referenceImageId = referenceImageId
+                )
+            }
+        }
+
         fun toDomain(breedDTO: List<BreedDTO>): List<Breed> {
             return breedDTO.map {
                 with(it) {
