@@ -32,28 +32,11 @@ object ServiceModule {
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS)
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 
-        val requestInterceptor = Interceptor { chain ->
-            val url = chain.request()
-                .url
-                .newBuilder()
-                .addQueryParameter("api_key", "")
-                .build()
-
-            val request = chain.request()
-                .newBuilder()
-                .url(url)
-                .build()
-            return@Interceptor chain.proceed(request)
-        }
-
        return OkHttpClient
             .Builder()
-            .addInterceptor(requestInterceptor)
             .addInterceptor(loggingInterceptor)
             .build()
     }
-
-
 
     @Provides
     @Singleton

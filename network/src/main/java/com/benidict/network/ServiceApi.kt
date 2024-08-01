@@ -3,6 +3,7 @@ package com.benidict.network
 import com.benidict.network.model.BreedDTO
 import com.benidict.network.model.ImageDTO
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Path
 import retrofit2.http.Query
 

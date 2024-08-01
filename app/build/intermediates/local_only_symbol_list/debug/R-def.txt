@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color line
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable baseline_arrow_back_ios_24
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+font roboto_condensed_bold
+font roboto_condensed_bold_italic
+font roboto_condensed_italic
+font roboto_condensed_light
+font roboto_condensed_light_italic
+font roboto_condensed_regular
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string breed
+string breed_description
+string height
+string home
+string life_span
+string temperament
+string weight
+style Theme.Thedogjetpackcompose
+xml backup_rules
+xml data_extraction_rules
